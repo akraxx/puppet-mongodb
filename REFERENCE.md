@@ -19,7 +19,7 @@
 * [`mongodb::replset`](#mongodb--replset): Wrapper class useful for hiera based deployments
 * [`mongodb::repo::apt`](#mongodb--repo--apt): PRIVATE CLASS: do not use directly
 * [`mongodb::repo::yum`](#mongodb--repo--yum): PRIVATE CLASS: do not use directly
-* [`mongodb::server`](#mongodb--server): This setting can be used to specify if the service should be running.
+* [`mongodb::server`](#mongodb--server): This installs a MongoDB server.
 * [`mongodb::server::config`](#mongodb--server--config): PRIVATE CLASS: do not call directly
 * [`mongodb::server::install`](#mongodb--server--install): PRIVATE CLASS: do not call directly
 * [`mongodb::server::service`](#mongodb--server--service): PRIVATE CLASS: do not call directly
@@ -1197,7 +1197,29 @@ PRIVATE CLASS: do not use directly
 
 ### <a name="mongodb--server"></a>`mongodb::server`
 
+Most of the parameters manipulate the mongod.conf file.
+
+ For more details about configuration parameters consult the MongoDB Configuration File Options.
+
+ }
+
 This setting can be used to specify if the service should be running.
+
+#### Examples
+
+##### Basic usage.
+
+```puppet
+include mongodb::server
+```
+
+##### Overrule settings
+
+```puppet
+class {'mongodb::server':
+  port    => 27018,
+  verbose => true,
+```
 
 #### Parameters
 
