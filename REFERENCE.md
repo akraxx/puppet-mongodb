@@ -263,7 +263,7 @@ Data type: `Any`
 The version of MonogDB to install/manage. This is needed when managing repositories.
 If not specified, the module will use the default for your OS distro.
 
-Default value: `'6.0'`
+Default value: `undef`
 
 ##### <a name="-mongodb--globals--mongosh_version"></a>`mongosh_version`
 
