@@ -46,7 +46,7 @@ class mongodb::server::service {
       status    => $service_status,
     }
 
-    if $service_ensure {
+    if $service_ensure and !$facts['clientnoop'] { {
       mongodb_conn_validator { 'mongodb':
         server  => $bind_ip_real,
         port    => $port_real,
